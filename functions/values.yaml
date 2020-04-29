@@ -8,5 +8,5 @@ certinfo:
 podinfo:
   image: stefanprodan/podinfo:3.1.0
 
-createPDF:
+createpdf:
   image: alexellis/create-pdf:0.1.0
