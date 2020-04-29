@@ -11,6 +11,6 @@ spec:
     version: 5.4.1
   values:
     generateBasicAuth: true
-    serviceType: LoadBalancer
+    serviceType: NodePort
     operator:
       create: true
