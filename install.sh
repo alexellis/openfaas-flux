@@ -10,7 +10,7 @@ if [ ! -x "$(command -v helm)" ]; then
     exit 1
 fi
 
-GH_USER=${1:-stefanprodan}
+GH_USER=${1:-alexellis}
 GH_REPO=${2:-openfaas-flux}
 GH_BRANCH=${3:-master}
 GH_URL="git@github.com:${GH_USER}/${GH_REPO}"
@@ -30,7 +30,7 @@ helm upgrade -i flux fluxcd/flux --wait \
 --set git.url=${GH_URL} \
 --set git.branch=${GH_BRANCH}
 
-kubectl apply -f https://raw.githubusercontent.com/fluxcd/helm-operator/master/deploy/flux-helm-release-crd.yaml
+kubectl apply -f https://raw.githubusercontent.com/fluxcd/helm-operator/master/chart/helm-operator/crds/helmrelease.yaml
 
 helm upgrade -i helm-operator fluxcd/helm-operator --wait \
 --namespace fluxcd \
