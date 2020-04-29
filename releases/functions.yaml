@@ -9,6 +9,7 @@ metadata:
     fluxcd.io/automated: "false"
     filter.fluxcd.io/certinfo: semver:~1.0
     filter.fluxcd.io/podinfo: semver:~3.1
+    filter.fluxcd.io/createpdf: semver:~0.1
 spec:
   releaseName: functions
   chart:
@@ -20,3 +21,5 @@ spec:
       image: stefanprodan/certinfo:1.0.0
     podinfo:
       image: stefanprodan/podinfo:3.1.0
+    createpdf:
+      image: alexellis/create-pdf:0.1.0

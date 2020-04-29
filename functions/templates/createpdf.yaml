@@ -1,0 +1,12 @@
+apiVersion: openfaas.com/v1alpha2
+kind: Function
+metadata:
+  name: createpdf
+  labels:
+{{ include "functions.labels" . | indent 4 }}
+spec:
+  name: createpdf
+  image: {{ .Values.createpdf.image }}
+  labels:
+    com.openfaas.scale.min: "1"
+    com.openfaas.scale.max: "5"
